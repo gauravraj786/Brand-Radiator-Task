@@ -1,0 +1,133 @@
+.header {
+  position: relative;
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header__logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: rotateLogo 10s linear infinite;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.header__logo {
+  width: 100px;
+}
+
+.header__nav {
+  position: absolute;
+  right: 0;
+  display: flex;
+  padding: 0 20px;
+}
+
+.header__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header__nav-item {
+  margin-left: 20px;
+}
+
+.header__nav-link {
+  color: #333;
+  text-decoration: none;
+}
+
+.header__nav-link:hover {
+  color: #666;
+}
+
+.header__logo {
+  height: 50px;
+}
+
+.hamburger-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.hamburger-btn__open {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.line {
+  height: 4px;
+  width: 25px;
+  margin: 5px 0;
+  background-color: #333;
+  border-radius: 3px;
+}
+.hamburger-btn__open .line:nth-child(1) {
+  top: 18px;
+  transform: rotate(-45deg);
+}
+
+.hamburger-btn__open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn__open .line:nth-child(3) {
+  top: 6px;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.hamburger-btn__open .line:nth-child(1)::before,
+.hamburger-btn__open .line:nth-child(3)::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+.hamburger-btn__open .line:nth-child(1)::after,
+.hamburger-btn__open .line:nth-child(3)::after {
+  bottom: 0;
+  transform: rotate(0);
+}
+
+.hamburger-btn__open .line:nth-child(2)::before,
+.hamburger-btn__open .line:nth-child(2)::after {
+  opacity: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .header__nav {
+    display: none;
+  }
+}
